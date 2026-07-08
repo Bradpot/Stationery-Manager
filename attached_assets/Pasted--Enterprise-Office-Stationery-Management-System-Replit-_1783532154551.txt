@@ -1,0 +1,612 @@
+# Enterprise Office Stationery Management System (Replit AI Prompt)
+
+Build a **production-ready, full-stack Office Stationery Management System** using **Replit**. Generate a complete application with both frontend and backend in a single project. The application should be modern, responsive, secure, scalable, and deployment-ready.
+
+## Tech Stack (Use Exactly These)
+
+### Frontend
+- React 19
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn/ui
+- Framer Motion
+- React Hook Form
+- Zod
+- TanStack Table
+- TanStack Query
+- React Router DOM
+- Recharts
+- Lucide React
+- Sonner Toast
+
+### Backend
+- Node.js
+- Express.js
+- TypeScript
+- Prisma ORM
+- MySQL (Preferred)
+- JWT Authentication
+- bcrypt
+- Multer
+- Nodemailer
+- XLSX
+- PDF Export
+
+## General Requirements
+
+This application should look like a commercial SaaS dashboard similar to:
+
+- Notion
+- Linear
+- Stripe Dashboard
+- Clerk Dashboard
+- Microsoft 365 Admin
+- Vercel Dashboard
+
+It should NOT look like a college CRUD project.
+
+Generate clean architecture with reusable components, modular code, proper folder structure, scalable APIs, and production-ready coding standards.
+
+---
+
+# Authentication
+
+Create a secure authentication system.
+
+## Login
+
+- Email or Username
+- Password
+- Remember Me
+- Show/Hide Password
+- Forgot Password
+- Validation
+- Loading States
+- Beautiful UI
+
+## Register
+
+Only the first administrator can register.
+
+Fields
+
+- Full Name
+- Office Name
+- Email
+- Phone Number
+- Username
+- Password
+- Confirm Password
+
+## Forgot Password
+
+Flow
+
+Email → OTP → Reset Password
+
+OTP expires in 5 minutes.
+
+Passwords must be encrypted using bcrypt.
+
+Protect every private route using JWT.
+
+---
+
+# Office Settings
+
+Create a settings page where the admin can configure:
+
+- Office Name
+- Office Logo
+- Office Address
+- Office Email
+- Phone Number
+- Website
+- GST Number (Optional)
+
+Display Office Logo and Office Name in the Navbar across the application.
+
+---
+
+# Dashboard
+
+Create a beautiful dashboard.
+
+Display:
+
+- Total Items
+- Total Categories
+- Total Departments
+- Total Stock
+- Inventory Value
+- Low Stock
+- Out of Stock
+- Today's Issued Items
+- Monthly Distribution
+
+Dashboard should include:
+
+- Animated Cards
+- Charts
+- Quick Actions
+- Notifications
+- Recent Activities
+- Inventory Trends
+- Department Statistics
+
+Everything should animate smoothly.
+
+---
+
+# Categories
+
+Admin can:
+
+- Add Category
+- Edit Category
+- Delete Category
+- Search Categories
+
+Examples
+
+- Pens
+- Papers
+- Files
+- Printer Items
+- Stationery
+- Office Accessories
+
+---
+
+# Inventory
+
+Create an inventory module.
+
+Each Item contains:
+
+- Item Name
+- Category
+- Item Code (Auto Generated)
+- Barcode (Optional)
+- Description
+- Supplier
+- Purchase Date
+- Purchase Price
+- Unit
+- Total Purchased
+- Available Stock
+- Minimum Stock
+- Maximum Stock
+- Item Image
+- Status
+
+Status
+
+- In Stock
+- Low Stock
+- Out of Stock
+
+Support image upload.
+
+---
+
+# Department Management
+
+Allow unlimited departments.
+
+CRUD
+
+Fields
+
+- Department Name
+- Department Code
+- Department Head
+- Phone
+- Email
+- Description
+
+---
+
+# Issue Items
+
+Create a page for issuing stationery.
+
+Fields
+
+- Department
+- Receiver Name
+- Employee ID
+- Item
+- Available Quantity
+- Quantity Issued
+- Purpose
+- Remarks
+- Date
+- Issued By
+
+Validation
+
+Cannot issue more than available stock.
+
+Automatically decrease inventory.
+
+Generate issue history.
+
+---
+
+# Return Items
+
+Allow departments to return items.
+
+Fields
+
+- Department
+- Item
+- Quantity Returned
+- Reason
+- Remarks
+- Date
+
+Automatically update stock.
+
+---
+
+# Purchase Stock
+
+Create a purchase module.
+
+Fields
+
+- Supplier
+- Invoice Number
+- Item
+- Purchase Quantity
+- Purchase Price
+- Purchase Date
+
+Automatically increase inventory.
+
+---
+
+# Automatic Inventory Logic
+
+Inventory should automatically calculate:
+
+Current Stock
+
+Issued Stock
+
+Returned Stock
+
+Purchased Stock
+
+Remaining Stock
+
+Example
+
+Purchased = 1000
+
+Issued = 200
+
+Returned = 50
+
+Remaining = 850
+
+Inventory should never become negative.
+
+---
+
+# Audit Logs
+
+Maintain complete history.
+
+Store
+
+- Previous Quantity
+- New Quantity
+- Date
+- Time
+- User
+- Action
+- Browser
+- IP Address
+
+Actions
+
+Created
+
+Updated
+
+Deleted
+
+Purchased
+
+Issued
+
+Returned
+
+Exported
+
+Login
+
+Logout
+
+---
+
+# Reports
+
+Generate reports
+
+- Inventory
+- Department
+- Purchase
+- Issue
+- Return
+- Monthly
+- Annual
+- Low Stock
+- Out of Stock
+
+---
+
+# Export
+
+Allow exporting
+
+- Excel
+- CSV
+- PDF
+
+Include:
+
+Item
+
+Department
+
+Current Stock
+
+Issued Stock
+
+Purchase Quantity
+
+Status
+
+Updated Date
+
+Updated Time
+
+Updated By
+
+---
+
+# Search & Filters
+
+Global Search
+
+Search by
+
+- Item
+- Department
+- Category
+- Supplier
+- Date
+
+Filters
+
+- Date Range
+- Department
+- Category
+- Supplier
+- Status
+
+---
+
+# Notifications
+
+Create notification center.
+
+Notify admin for:
+
+- Low Stock
+- Out of Stock
+- New Purchase
+- Issue Completed
+- Return Completed
+- Department Added
+
+---
+
+# Analytics
+
+Create analytics dashboard.
+
+Include
+
+- Inventory Value
+- Stock Movement
+- Monthly Usage
+- Department Usage
+- Top Used Items
+- Least Used Items
+- Monthly Purchases
+
+---
+
+# Database
+
+Create normalized Prisma schema.
+
+Tables
+
+- users
+- office_settings
+- departments
+- categories
+- suppliers
+- inventory
+- purchases
+- issue_transactions
+- return_transactions
+- notifications
+- activity_logs
+
+Every table must include:
+
+- id
+- createdAt
+- updatedAt
+- createdBy
+- updatedBy
+- deletedAt (Soft Delete)
+
+---
+
+# UI / UX
+
+Build a premium enterprise interface.
+
+Requirements
+
+- Glassmorphism
+- Premium Cards
+- Rounded Corners
+- Modern Color Palette
+- Beautiful Typography
+- Sticky Header
+- Responsive Sidebar
+- Dashboard Widgets
+- Professional Tables
+- Interactive Charts
+- Responsive Layout
+
+---
+
+# Animations
+
+Use Framer Motion.
+
+Animate
+
+- Page Transitions
+- Sidebar
+- Navbar
+- Cards
+- Tables
+- Charts
+- Dropdowns
+- Forms
+- Modals
+- Buttons
+- Toasts
+- Notifications
+- Loading Skeletons
+- Progress Bars
+- Empty States
+- Hover Effects
+
+Use subtle, smooth animations similar to Stripe or Linear.
+
+---
+
+# Tables
+
+Professional Data Tables
+
+Features
+
+- Sticky Header
+- Search
+- Pagination
+- Sorting
+- Column Filters
+- Export
+- Bulk Delete
+- Responsive
+- Hover Effects
+
+---
+
+# Forms
+
+Use premium forms.
+
+Include
+
+- Floating Labels
+- Live Validation
+- Searchable Dropdowns
+- Date Picker
+- Drag & Drop Upload
+- Error Animation
+- Loading State
+
+---
+
+# Theme
+
+Support
+
+- Light Theme
+- Dark Theme
+- Theme Toggle
+
+---
+
+# Security
+
+Implement
+
+- JWT Authentication
+- bcrypt Password Hashing
+- Role-Based Authorization
+- Protected Routes
+- Input Validation
+- SQL Injection Protection
+- XSS Protection
+- Rate Limiting
+
+---
+
+# Code Quality
+
+Generate production-ready code.
+
+Requirements
+
+- Complete frontend and backend
+- Working APIs
+- Prisma migrations
+- Seed data
+- Environment variables
+- Clean folder structure
+- Reusable components
+- Modular APIs
+- Type-safe code
+- Optimized performance
+- Error handling
+- Loading states
+- Empty states
+- Deployment-ready configuration
+
+---
+
+# IMPORTANT
+
+Do not generate placeholder pages or incomplete CRUD screens.
+
+Generate a **fully functional application** with:
+- Complete frontend
+- Complete backend
+- Database schema
+- API routes
+- Authentication
+- Dashboard
+- CRUD operations
+- Reports
+- Charts
+- Export functionality
+- Responsive design
+- Smooth animations
+
+Every button, form, API, and feature should be fully connected and functional. The final result should be comparable to a real enterprise inventory management SaaS application that could be deployed and used in a corporate office without requiring major rewrites.
