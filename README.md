@@ -49,7 +49,7 @@ Office-Stationery-Management/
 
 # Installation
 1. Clone the Repository
-git clone https://github.com/your-username/office-stationery-management.git
+git clone https://github.com/Bradpot/office-stationery-management.git
 
 2. Navigate to the Project
 cd office-stationery-management
